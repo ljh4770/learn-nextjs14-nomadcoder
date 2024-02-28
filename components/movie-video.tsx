@@ -1,10 +1,10 @@
-import { API_URL } from "../app/(home)/page";
+import { API_MOVIE_LIST } from "../app/about-us/constants";
 import styles from "../styles/movie-videos.module.css";
 
 async function getVideos(id: string) {
     console.log(`Fetching videos: ${Date.now()}`);
     // throw new Error("Something broke...");
-    const res = await fetch(`${API_URL}/${id}/videos`);
+    const res = await fetch(`${API_MOVIE_LIST}/${id}/videos`);
     return res.json();
 }
 

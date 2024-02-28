@@ -1,16 +1,17 @@
 import { Metadata } from "next";
 import Movie from "../../components/movie";
 import styles from "../../styles/home.module.css";
+import { API_MOVIE_LIST } from "../about-us/constants";
 
 export const metadata: Metadata = {
-    title: "Home"
+    title: "Home",
 }
 
-export const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
+// export const API_MOVIE_LIST = "https://nomad-movies.nomadcoders.workers.dev/movies";
 
 async function getMovies() {
     console.log("Fetching Movies..."); // 서버 컴포넌트임을 확인
-    const res = await fetch(API_URL);
+    const res = await fetch(API_MOVIE_LIST);
     const json = await res.json();
     return json;
 }
